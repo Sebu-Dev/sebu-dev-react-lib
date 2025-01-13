@@ -1,0 +1,74 @@
+{
+  "name": "sebu-dev-react-lib",
+  "description": "A React component library for reusable components and assets with Tailwind CSS support.",
+  "version": "0.0.1",
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "dist/sebu-dev-react-lib.css",
+    "dist/assets"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js"
+    },
+    "./dist/style.css": "./dist/style.css",
+    "./dist/assets/*": "./dist/assets/*"
+  },
+  "scripts": {
+    "dev": "tsc && vite build --watch",
+    "start": "vite --host --open",
+    "build": "tsc && vite build",
+    "build:types": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "postinstall": "npm install motion react-icons"
+  },
+  "keywords": [
+    "react",
+    "component-library",
+    "tailwindcss",
+    "vite",
+    "typescript",
+    "frontend"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sebu-Dev/npm-packages.git"
+  },
+  "author": "Florian Sebulke",
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/sebu-dev-react-lib#readme",
+  "dependencies": {
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "motion": "^11.17.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.5",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.18.2",
+    "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.5.0",
+    "vite-plugin-static-copy": "^2.2.0"
+  }
+}
