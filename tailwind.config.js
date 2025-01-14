@@ -2,7 +2,7 @@
 export default {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
-    "node_modules/sebu-dev-react-lib/dist/**/*.css", // Füge hier alle anderen Quellen hinzu, in denen du Tailwind-Klassen verwendest
+    "node_modules/sebu-dev-react-lib/dist/**/*.css",
   ],
   theme: {
     extend: {},
