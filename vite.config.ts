@@ -29,7 +29,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "motion", "react-icons"],
       output: {
         globals: {
           react: "React",
