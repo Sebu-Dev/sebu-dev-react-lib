@@ -2,13 +2,14 @@ import { motion, TargetAndTransition, Transition } from "framer-motion";
 import React from "react";
 
 export interface BaseButtonProps {
-  handleOnClick: () => void;
+  handleOnClick?: () => void;
   className?: string;
   bgColor?: string;
   textColor?: string;
   animationHover?: boolean;
   animationOnClick?: boolean;
   hoverEffect?: TargetAndTransition;
+  glowEffect?: boolean;
   tapEffect?: TargetAndTransition;
   transition?: Transition;
   icon?: React.ReactNode;
@@ -30,22 +31,29 @@ export const BaseButton = ({
   animationHover = false,
   animationOnClick = false,
   hoverEffect = defaultHoverEffect,
+  glowEffect = false,
   tapEffect = defaultTapEffect,
   transition = defaultTransition,
-  icon,
-  bgColor,
-  textColor,
-  label,
+  icon = "",
+  bgColor = "",
+  textColor = "",
+  label = "",
   children,
 }: BaseButtonProps) => {
-  const resolvedHoverEffect = animationHover ? hoverEffect : undefined;
+  const resolvedHoverEffect = animationHover
+    ? {
+        boxShadow: glowEffect ? "0px 0px 15px rgba(255, 255, 255, 0.8)" : "",
+        ...hoverEffect,
+      }
+    : "";
+
   const resolvedTapEffect = animationOnClick ? tapEffect : undefined;
   const resolvedTransition = transition ? transition : undefined;
 
   return (
     <motion.button
       onClick={handleOnClick}
-      className={`flex items-center justify-center rounded-full shadow-lg px-6 py-3 m-2 ${className} ${bgColor} ${textColor}`}
+      className={`flex items-center justify-center rounded-full text-white shadow-lg px-6 py-3 m-2 ${className} ${bgColor} ${textColor}`}
       whileHover={resolvedHoverEffect}
       whileTap={resolvedTapEffect}
       transition={resolvedTransition}

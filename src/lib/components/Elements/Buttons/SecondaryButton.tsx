@@ -1,19 +1,19 @@
 import { BaseButton, type BaseButtonProps } from "./BaseButton";
 
-type PrimaryButtonButtonProps = Omit<BaseButtonProps, "className">;
+type SecondaryButtonProps = Omit<BaseButtonProps, "className">;
 
-export const PrimaryButton = ({ ...props }: PrimaryButtonButtonProps) => {
+export const SecondaryButton = ({ ...props }: SecondaryButtonProps) => {
   const customHoverEffect = {
     scale: 1,
     boxShadow: props.glowEffect
-      ? "0px 0px 20px rgba(0, 255, 255, 0.6)"
+      ? "0px 0px 20px rgba(128, 0, 128, 0.9)"
       : undefined,
   };
 
   return (
     <BaseButton
       {...props}
-      className="hover:bg-cyan-400/90 bg-cyan-500"
+      className="bg-purple-600 hover:bg-purple-700"
       hoverEffect={customHoverEffect}
     />
   );
