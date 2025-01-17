@@ -1,9 +1,11 @@
-import { color, motion, TargetAndTransition, Transition } from "framer-motion";
+import { motion, TargetAndTransition, Transition } from "framer-motion";
+import React from "react";
 
 export interface BaseButtonProps {
   handleOnClick: () => void;
   className?: string;
-  color?: string;
+  bgColor?: string;
+  textColor?: string;
   animationHover?: boolean;
   animationOnClick?: boolean;
   hoverEffect?: TargetAndTransition;
@@ -25,12 +27,14 @@ const defaultTransition: Transition = {
 export const BaseButton = ({
   handleOnClick,
   className = "",
-  animationHover = true,
-  animationOnClick = true,
+  animationHover = false,
+  animationOnClick = false,
   hoverEffect = defaultHoverEffect,
   tapEffect = defaultTapEffect,
   transition = defaultTransition,
   icon,
+  bgColor,
+  textColor,
   label,
   children,
 }: BaseButtonProps) => {
@@ -41,7 +45,7 @@ export const BaseButton = ({
   return (
     <motion.button
       onClick={handleOnClick}
-      className={`flex items-center justify-center rounded-full shadow-lg px-6 py-3 m-2 ${className}${color}`}
+      className={`flex items-center justify-center rounded-full shadow-lg px-6 py-3 m-2 ${className} ${bgColor} ${textColor}`}
       whileHover={resolvedHoverEffect}
       whileTap={resolvedTapEffect}
       transition={resolvedTransition}
