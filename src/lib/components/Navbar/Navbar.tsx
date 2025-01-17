@@ -27,7 +27,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ children }) => {
   return (
-    <nav className="mb-14 lg:mb-20 flex items-center justify-between py-3">
+    <nav className="mb-14 lg:mb-20 flex items-center justify-between py-3 .navbar">
       <div className="flex flex-shrink-0 items-center">
         <Logo />
       </div>
