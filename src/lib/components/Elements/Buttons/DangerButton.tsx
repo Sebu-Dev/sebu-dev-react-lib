@@ -1,5 +1,7 @@
 import { type BaseButtonProps, BaseButton } from "./BaseButton";
 
-export const DangerButton = (props: Omit<BaseButtonProps, "className">) => (
+type DangerButtonProps = Omit<BaseButtonProps, "className">;
+
+export const DangerButton = (props: DangerButtonProps) => (
   <BaseButton {...props} className="bg-red-500 text-white" />
 );
