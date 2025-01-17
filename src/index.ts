@@ -4,6 +4,7 @@ import { ButtonCyan } from "./lib/components/Elements/Buttons/ButtonCyan";
 import { DangerButton } from "./lib/components/Elements/Buttons/DangerButton";
 import { IconButton } from "./lib/components/Elements/Buttons/IconButton";
 import { PrimaryButton } from "./lib/components/Elements/Buttons/PrimaryButton";
+import { SecondaryButton } from "./lib/components/Elements/Buttons/SecondaryButton";
 import { Card } from "./lib/components/Elements/Card";
 import { InputField } from "./lib/components/Elements/InputField/InputField";
 import { Layout } from "./lib/components/Layout/Layout";
@@ -22,4 +23,5 @@ export {
   Logo,
   Navbar,
   PrimaryButton,
+  SecondaryButton,
 };

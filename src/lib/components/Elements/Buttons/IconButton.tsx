@@ -9,22 +9,24 @@ interface IconButtonProps extends Omit<BaseButtonProps, "label"> {
 
 export const IconButton = ({
   icon,
-  handleOnClick,
-  className = "",
-  hoverEffect = { scale: 1.1 },
-  tapEffect = { scale: 0.9 },
-  transition = { type: "spring", stiffness: 300 },
   size = "text-4xl",
   textColor = "text-cyan-500",
+  ...props
 }: IconButtonProps) => {
-  console.log(textColor);
+  const customHoverEffect = {
+    ...props.hoverEffect,
+    boxShadow: props.glowEffect
+      ? "0px 0px 15px rgba(0, 255, 255, 0.8)"
+      : undefined,
+  };
+
   return (
     <motion.div
-      onClick={handleOnClick}
-      className={`inline-flex items-center justify-center cursor-pointer  ${size} ${textColor} ${className}`}
-      whileHover={hoverEffect}
-      whileTap={tapEffect}
-      transition={transition}
+      onClick={props.handleOnClick}
+      className={`inline-flex items-center justify-center cursor-pointer ${size} ${textColor} ${props.className}`}
+      whileHover={customHoverEffect}
+      whileTap={props.tapEffect}
+      transition={props.transition}
     >
       {icon}
     </motion.div>

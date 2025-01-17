@@ -32,18 +32,15 @@ export const Card = ({
   };
 
   return (
-    <div className={`relative p-4 rounded-lg shadow-md ${className}`}>
-      <div className={`absolute inset-0 ${backgroundClass} rounded-lg`}></div>
-      <div className="relative z-10">
-        {title && (
-          <h2
-            className={`text-lg font-semibold ${textColor} mb-2 ${titleAlignment[justifyTitle]}`}
-          >
-            {title}
-          </h2>
-        )}
-        <div className="flex flex-col">{children}</div>
-      </div>
+    <div className={`p-4 rounded-lg shadow-md ${className} ${backgroundClass}`}>
+      {title && (
+        <h2
+          className={`text-lg font-semibold ${textColor} mb-2 ${titleAlignment[justifyTitle]}`}
+        >
+          {title}
+        </h2>
+      )}
+      <div className="flex flex-col">{children}</div>
     </div>
   );
 };
