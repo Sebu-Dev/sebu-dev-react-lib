@@ -6,7 +6,7 @@ export const PrimaryButton = ({ ...props }: PrimaryButtonButtonProps) => {
   const customHoverEffect = {
     scale: 1,
     boxShadow: props.glowEffect
-      ? "0px 0px 20px rgba(0, 255, 255, 0.6)"
+      ? "5px 5px 15px rgba(6, 182, 212, 0.4)"
       : undefined,
   };
 
