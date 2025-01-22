@@ -53,7 +53,7 @@ export const BaseButton = ({
   return (
     <motion.button
       onClick={handleOnClick}
-      className={`flex items-center justify-center rounded-full text-white shadow-lg px-6 py-3 m-2 ${className} ${bgColor} ${textColor}`}
+      className={`flex items-center justify-center rounded-full text-white shadow-lg px-6 py-3 m-2  ${bgColor} ${textColor} ${className}`}
       whileHover={resolvedHoverEffect}
       whileTap={resolvedTapEffect}
       transition={resolvedTransition}

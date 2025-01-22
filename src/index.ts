@@ -7,6 +7,7 @@ import { PrimaryButton } from "./lib/components/Elements/Buttons/PrimaryButton";
 import { SecondaryButton } from "./lib/components/Elements/Buttons/SecondaryButton";
 import { Card } from "./lib/components/Elements/Card";
 import { InputField } from "./lib/components/Elements/InputField/InputField";
+import { Popup } from "./lib/components/Elements/Popups/Popup";
 import { Layout } from "./lib/components/Layout/Layout";
 import { Logo } from "./lib/components/Logo/Logo";
 import { Navbar } from "./lib/components/Navbar/Navbar";
@@ -22,6 +23,7 @@ export {
   Layout,
   Logo,
   Navbar,
+  Popup,
   PrimaryButton,
   SecondaryButton,
 };

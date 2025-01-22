@@ -32,7 +32,7 @@ export const Card = ({
   };
 
   return (
-    <div className={`p-4 rounded-lg shadow-md ${className} ${backgroundClass}`}>
+    <div className={`p-4 rounded-lg shadow-md ${backgroundClass} ${className}`}>
       {title && (
         <h2
           className={`text-lg font-semibold ${textColor} mb-2 ${titleAlignment[justifyTitle]}`}
