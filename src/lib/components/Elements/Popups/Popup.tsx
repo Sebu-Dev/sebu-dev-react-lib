@@ -13,14 +13,14 @@ interface PopupProps {
 export const Popup = ({
   children,
   bgColor = "bg-neutral-800",
-  bgOpacity = "bg-opacity-50",
+  bgOpacity = "bg-opacity-10",
   zPositionBlur = "z-10",
   zPositionPopup = "z-20",
   backdropBlur = " backdrop-blur-sm",
   className = " ",
 }: PopupProps) => {
   return (
-    <div className="fixed w-full h-full top-0 left-0 flex justify-center items-center">
+    <div className="fixed w-full h-full top-0 p-0 left-0 flex justify-center items-center">
       <div
         className={`fixed inset-0 bg-black ${bgOpacity} ${backdropBlur}  ${zPositionBlur}`}
       ></div>

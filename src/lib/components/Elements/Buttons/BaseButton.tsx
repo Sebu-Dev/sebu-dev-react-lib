@@ -4,8 +4,6 @@ import React from "react";
 export interface BaseButtonProps {
   handleOnClick?: () => void;
   className?: string;
-  bgColor?: string;
-  textColor?: string;
   animationHover?: boolean;
   animationOnClick?: boolean;
   hoverEffect?: TargetAndTransition;
@@ -35,25 +33,23 @@ export const BaseButton = ({
   tapEffect = defaultTapEffect,
   transition = defaultTransition,
   icon = "",
-  bgColor = "",
-  textColor = "",
   label = "",
   children,
 }: BaseButtonProps) => {
   const resolvedHoverEffect = animationHover
     ? {
-        boxShadow: glowEffect ? "0px 0px 15px rgba(255, 255, 255, 0.8)" : "",
+        boxShadow: glowEffect ? "0px 0px 15px rgba(255, 255, 255, 0.8)" : {},
         ...hoverEffect,
       }
-    : "";
+    : {};
 
-  const resolvedTapEffect = animationOnClick ? tapEffect : undefined;
-  const resolvedTransition = transition ? transition : undefined;
+  const resolvedTapEffect = animationOnClick ? tapEffect : {};
+  const resolvedTransition = transition ? transition : {};
 
   return (
     <motion.button
       onClick={handleOnClick}
-      className={`flex items-center justify-center rounded-full text-white shadow-lg px-6 py-3 m-2  ${bgColor} ${textColor} ${className}`}
+      className={`flex items-center justify-center rounded-full text-white shadow-lg px-6 py-3 m-2  ${className}`}
       whileHover={resolvedHoverEffect}
       whileTap={resolvedTapEffect}
       transition={resolvedTransition}
