@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { BaseButton } from "../../../../index";
 import type { BaseButtonProps } from "./BaseButton";
 
-interface IconButtonProps extends Omit<BaseButtonProps, "label"> {
+interface IconButtonProps extends BaseButtonProps {
   icon: React.ReactNode;
   size?: string;
   textColor?: string;
@@ -9,26 +9,26 @@ interface IconButtonProps extends Omit<BaseButtonProps, "label"> {
 
 export const IconButton = ({
   icon,
-  size = "text-4xl",
-  textColor = "text-cyan-500",
+  size = " text-4xl",
+  textColor = " text-cyan-500",
   ...props
 }: IconButtonProps) => {
-  const customHoverEffect = {
-    ...props.hoverEffect,
-    boxShadow: props.glowEffect
-      ? "0px 0px 15px rgba(0, 255, 255, 0.8)"
-      : undefined,
-  };
+  const customHoverEffect = props.animationHover
+    ? {
+        ...props.hoverEffect,
+        boxShadow: props.glowEffect
+          ? "0px 0px 15px rgba(0, 255, 255, 0.8)"
+          : "",
+      }
+    : {};
 
   return (
-    <motion.div
-      onClick={props.handleOnClick}
-      className={`inline-flex items-center justify-center cursor-pointer ${size} ${textColor} ${props.className}`}
-      whileHover={customHoverEffect}
-      whileTap={props.tapEffect}
-      transition={props.transition}
+    <BaseButton
+      {...props}
+      className={` ${props.className} `}
+      hoverEffect={customHoverEffect}
     >
-      {icon}
-    </motion.div>
+      <div className={`${textColor} ${size}`}>{icon}</div>
+    </BaseButton>
   );
 };
