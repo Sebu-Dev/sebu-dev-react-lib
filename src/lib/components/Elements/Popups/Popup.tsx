@@ -20,13 +20,14 @@ export const Popup = ({
   className = " ",
 }: PopupProps) => {
   return (
-    <div className="fixed w-full h-full top-0 p-0 left-0 flex justify-center items-center">
+    <div className="absolute w-full h-full top-0 p-0 left-0 flex justify-center items-center">
       <div
-        className={`fixed inset-0 bg-black ${bgOpacity} ${backdropBlur}  ${zPositionBlur}`}
+        className={`absolute inset-0 bg-black ${bgOpacity} ${backdropBlur}  ${zPositionBlur}`}
       ></div>
       <div className={`${zPositionPopup} ${bgColor} ${className}`}>
         {children}
       </div>
+      <div className="absolute"></div>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { motion, TargetAndTransition, Transition } from "framer-motion";
 import React from "react";
 
 export interface BaseButtonProps {
-  handleOnClick?: () => void;
+  handleOnClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   className?: string;
   animationHover?: boolean;
   animationOnClick?: boolean;
