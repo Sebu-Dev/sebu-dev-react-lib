@@ -1,7 +1,7 @@
 {
   "name": "sebu-dev-react-lib",
   "description": "A React component library for reusable components and assets with Tailwind CSS support.",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "private": false,
   "type": "module",
   "main": "./dist/index.umd.js",
