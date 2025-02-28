@@ -1,7 +1,7 @@
-import { Card } from "lib/components/Elements/Card";
-import { Layout } from "lib/components/Layout/Layout";
+import { Card } from "lib/components/elements/Card";
+import { Layout } from "lib/components/layout/Layout";
 import React from "react";
-import { ButtonCyan } from "./lib/components/Elements/Buttons/ButtonCyan";
+import { ButtonCyan } from "./lib/components/elements/Buttons/ButtonCyan";
 
 const App: React.FC = () => {
   return (
